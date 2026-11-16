@@ -5,182 +5,82 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DigitalStore | Premium Gaming Shop</title>
-
 <style>
 :root {
-  --bg:#080b10;
-  --panel:#111720;
-  --panel2:#18212c;
-  --green:#a3ff12;
-  --text:#f5f7fa;
-  --muted:#929eac;
+  --bg:#080b10;--panel:#111720;--panel2:#18212c;
+  --green:#a3ff12;--text:#f5f7fa;--muted:#929eac;
   --border:#26313e;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,sans-serif;
-  line-height:1.6;
-}
+body{background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6}
 button,input,select{font:inherit}
 button{cursor:pointer}
-header{
-  position:sticky;top:0;z-index:10;
-  background:#080b10ed;
-  border-bottom:1px solid var(--border);
-  padding:15px 6%;
-  display:flex;justify-content:space-between;
-  align-items:center;gap:15px;
-}
+header{position:sticky;top:0;z-index:10;background:#080b10ed;border-bottom:1px solid var(--border);padding:15px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px}
 .logo{font-size:23px;font-weight:900}
 .logo span{color:var(--green)}
 .nav{display:flex;gap:18px;align-items:center}
 .nav a{color:var(--muted);text-decoration:none}
-.cart-btn,.primary{
-  background:var(--green);color:#10150a;
-  border:0;border-radius:9px;padding:11px 17px;
-  font-weight:bold;
-}
+.cart-btn,.primary{background:var(--green);color:#10150a;border:0;border-radius:9px;padding:11px 17px;font-weight:bold}
 .container{width:88%;max-width:1200px;margin:auto}
-.hero{
-  padding:75px 0 55px;
-  display:grid;grid-template-columns:1.4fr 1fr;
-  gap:35px;align-items:center;
-}
-.tag{
-  color:var(--green);font-size:13px;
-  letter-spacing:2px;font-weight:bold;
-}
+.hero{padding:75px 0 55px;display:grid;grid-template-columns:1.4fr 1fr;gap:35px;align-items:center}
+.tag{color:var(--green);font-size:13px;letter-spacing:2px;font-weight:bold}
 .hero h1{font-size:clamp(35px,5vw,58px);line-height:1.15;margin:15px 0}
 .hero h1 span{color:var(--green)}
 .hero p{color:var(--muted);max-width:520px}
-.hero-card{
-  background:linear-gradient(145deg,#192536,#10151e);
-  border:1px solid var(--border);
-  border-radius:20px;padding:30px;
-}
+.hero-card{background:linear-gradient(145deg,#192536,#10151e);border:1px solid var(--border);border-radius:20px;padding:30px}
 .hero-card .big{font-size:58px;text-align:center}
-.hero-card h2{text-align:center;margin:8px}
-.hero-card p{text-align:center;color:var(--muted)}
+.hero-card h2,.hero-card p{text-align:center}
+.hero-card p{color:var(--muted)}
 .section{padding:35px 0}
-.section-title{
-  display:flex;justify-content:space-between;
-  align-items:center;gap:15px;margin-bottom:22px;
-}
+.section-title{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:22px}
 .section-title h2{font-size:26px}
-.search{
-  background:var(--panel);border:1px solid var(--border);
-  padding:11px 14px;border-radius:9px;color:white;
-  width:230px;outline:none;
-}
+.search{background:var(--panel);border:1px solid var(--border);padding:11px 14px;border-radius:9px;color:white;width:230px;outline:none}
 .filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px}
-.filter{
-  padding:9px 15px;border:1px solid var(--border);
-  background:var(--panel);color:var(--muted);
-  border-radius:20px;
-}
+.filter{padding:9px 15px;border:1px solid var(--border);background:var(--panel);color:var(--muted);border-radius:20px}
 .filter.active{background:var(--green);color:#10150a;border-color:var(--green)}
-.products{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:17px;
-}
-.product{
-  background:var(--panel);border:1px solid var(--border);
-  border-radius:15px;padding:19px;transition:.2s;
-}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.product{background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:19px;transition:.2s}
 .product:hover{transform:translateY(-4px);border-color:var(--green)}
-.product-icon{
-  height:115px;background:var(--panel2);
-  border-radius:11px;display:grid;place-items:center;
-  font-size:48px;margin-bottom:15px;
-}
+.product-icon{height:115px;background:var(--panel2);border-radius:11px;display:grid;place-items:center;font-size:48px;margin-bottom:15px}
 .product small{color:var(--green)}
 .product h3{margin:5px 0}
 .product p{color:var(--muted);font-size:13px}
 .price{font-size:19px;font-weight:bold;margin:13px 0}
-.add{
-  width:100%;padding:10px;border-radius:8px;
-  background:transparent;border:1px solid var(--green);
-  color:var(--green);font-weight:bold;
-}
+.add{width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid var(--green);color:var(--green);font-weight:bold}
 .add:hover{background:var(--green);color:#10150a}
 .empty{color:var(--muted);padding:25px;text-align:center;grid-column:1/-1}
-.cart-panel{
-  background:var(--panel);border:1px solid var(--border);
-  border-radius:15px;padding:22px;
-}
-.cart-item{
-  display:flex;justify-content:space-between;
-  gap:12px;padding:13px 0;border-bottom:1px solid var(--border);
-}
+.cart-panel{background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:22px}
+.cart-item{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}
 .cart-item small{color:var(--muted)}
 .qty{display:flex;align-items:center;gap:9px}
-.qty button{
-  background:var(--panel2);border:1px solid var(--border);
-  color:white;border-radius:6px;width:28px;height:28px;
-}
-.total{
-  display:flex;justify-content:space-between;
-  font-size:20px;font-weight:bold;margin:20px 0;
-}
+.qty button{background:var(--panel2);border:1px solid var(--border);color:white;border-radius:6px;width:28px;height:28px}
+.total{display:flex;justify-content:space-between;font-size:20px;font-weight:bold;margin:20px 0}
 .total strong{color:var(--green)}
-.checkout{
-  width:100%;padding:13px;border:0;
-  background:var(--green);border-radius:9px;
-  font-weight:bold;
-}
+.checkout{width:100%;padding:13px;border:0;background:var(--green);border-radius:9px;font-weight:bold}
 .checkout:disabled{opacity:.4;cursor:not-allowed}
-.form-box{
-  background:var(--panel);border:1px solid var(--border);
-  border-radius:15px;padding:24px;max-width:700px;margin:auto;
-}
+.form-box{background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:24px;max-width:700px;margin:auto}
 .form-box h2{margin-bottom:5px}
 .form-box>p{color:var(--muted);margin-bottom:20px;font-size:14px}
 .field{margin-bottom:15px}
 .field label{display:block;margin-bottom:6px;font-size:14px}
-.field input,.field select{
-  width:100%;padding:12px;background:#0b1119;
-  color:white;border:1px solid var(--border);
-  border-radius:8px;outline:none;
-}
+.field input,.field select{width:100%;padding:12px;background:#0b1119;color:white;border:1px solid var(--border);border-radius:8px;outline:none}
 .field input:focus,.field select:focus{border-color:var(--green)}
-.form-note{
-  color:var(--muted);font-size:12px;margin:12px 0;
-}
-.order-summary{
-  background:#0b1119;border:1px solid var(--border);
-  border-radius:10px;padding:15px;margin-bottom:18px;
-}
-.success{
-  display:none;background:var(--panel);
-  border:1px solid var(--green);border-radius:15px;
-  padding:25px;text-align:center;max-width:600px;margin:20px auto;
-}
+.form-note{color:var(--muted);font-size:12px;margin:12px 0}
+.order-summary{background:#0b1119;border:1px solid var(--border);border-radius:10px;padding:15px;margin-bottom:18px}
+.success{display:none;background:var(--panel);border:1px solid var(--green);border-radius:15px;padding:25px;text-align:center;max-width:600px;margin:20px auto}
 .success h2{color:var(--green);margin-bottom:10px}
-footer{
-  border-top:1px solid var(--border);
-  text-align:center;padding:30px 10px;
-  color:var(--muted);margin-top:50px;font-size:13px;
-}
+footer{border-top:1px solid var(--border);text-align:center;padding:30px 10px;color:var(--muted);margin-top:50px;font-size:13px}
 .hidden{display:none!important}
-@media(max-width:850px){
-  .products{grid-template-columns:repeat(2,1fr)}
-  .hero{grid-template-columns:1fr;padding-top:45px}
-}
+@media(max-width:850px){.products{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr;padding-top:45px}}
 @media(max-width:550px){
-  header{padding:12px 5%}
-  .nav a{display:none}
-  .container{width:92%}
-  .products{grid-template-columns:1fr 1fr;gap:10px}
-  .product{padding:12px}
-  .product-icon{height:85px;font-size:38px}
-  .section-title{align-items:flex-start;flex-direction:column}
-  .search{width:100%}
-  .hero-card{padding:20px}
+header{padding:12px 5%}.nav a{display:none}.container{width:92%}
+.products{grid-template-columns:1fr 1fr;gap:10px}
+.product{padding:12px}.product-icon{height:85px;font-size:38px}
+.section-title{align-items:flex-start;flex-direction:column}
+.search{width:100%}.hero-card{padding:20px}
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -190,9 +90,7 @@ footer{
     <a href="#products">Products</a>
     <a href="#cart">Cart</a>
   </nav>
-  <button class="cart-btn" onclick="goCart()">
-    🛒 Cart (<span id="cartCount">0</span>)
-  </button>
+  <button class="cart-btn" onclick="goCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
 </header>
 
 <main>
@@ -230,13 +128,8 @@ footer{
   <div class="section-title"><h2>🛒 Shopping Cart</h2></div>
   <div class="cart-panel">
     <div id="cartItems"></div>
-    <div class="total">
-      <span>Total</span>
-      <strong id="cartTotal">0 MMK</strong>
-    </div>
-    <button class="checkout" id="checkoutBtn" onclick="goCheckout()" disabled>
-      Proceed to Checkout →
-    </button>
+    <div class="total"><span>Total</span><strong id="cartTotal">0 MMK</strong></div>
+    <button class="checkout" id="checkoutBtn" onclick="goCheckout()" disabled>Proceed to Checkout →</button>
   </div>
 </section>
 
@@ -244,14 +137,10 @@ footer{
   <div class="form-box" id="checkoutFormBox">
     <h2>Customer Checkout</h2>
     <p>မှာယူမှုအတွက် အောက်ပါအချက်အလက်များကို ဖြည့်သွင်းပါ။</p>
-
     <div class="order-summary">
       <strong>Order Summary</strong>
       <div id="checkoutSummary"></div>
-      <div class="total">
-        <span>Total</span>
-        <strong id="checkoutTotal">0 MMK</strong>
-      </div>
+      <div class="total"><span>Total</span><strong id="checkoutTotal">0 MMK</strong></div>
     </div>
 
     <form id="orderForm">
@@ -259,12 +148,10 @@ footer{
         <label for="customerName">Customer Name *</label>
         <input id="customerName" required maxlength="60" placeholder="သင့်အမည်">
       </div>
-
       <div class="field">
         <label for="phone">Phone Number *</label>
         <input id="phone" required type="tel" maxlength="20" placeholder="09xxxxxxxxx">
       </div>
-
       <div class="field">
         <label for="game">Game / Product *</label>
         <select id="game" required>
@@ -275,35 +162,28 @@ footer{
           <option>PUBG Mobile</option>
         </select>
       </div>
-
       <div class="field">
         <label for="gameId">Game ID / User ID *</label>
         <input id="gameId" required maxlength="80" placeholder="သင့် Game ID">
       </div>
-
       <div class="field">
         <label for="note">Additional Note (Optional)</label>
         <input id="note" maxlength="200" placeholder="အခြားလိုအပ်ချက်များ">
       </div>
-
       <p class="form-note">
         * အချက်အလက်များ မှန်ကန်ကြောင်း စစ်ဆေးပြီးမှ Order တင်ပါ။
         ယခုအဆင့်တွင် Payment မပါဝင်သေးပါ။
       </p>
-
       <button class="checkout" type="submit">Place Order</button>
     </form>
   </div>
 
   <div class="success" id="successBox">
     <div style="font-size:45px">✅</div>
-    <h2>Order Created!</h2>
-    <p>သင့် Order ကို စမ်းသပ်မှုပုံစံဖြင့် ဖန်တီးပြီးပါပြီ။</p>
+    <h2>Order Created Successfully!</h2>
+    <p>သင့် Order ကို Database ထဲ သိမ်းဆည်းပြီးပါပြီ။</p>
     <p id="orderNumber"></p>
-    <p class="form-note">
-      သတိပြုရန် - ယခု Version သည် Demo ဖြစ်သည်။
-      Order ကို Admin ထံ အွန်လိုင်းမှ ပို့ဆောင်သိမ်းဆည်းခြင်း မပြုလုပ်သေးပါ။
-    </p>
+    <p class="form-note">Admin မှ Order ကို စစ်ဆေးပြီး ဆက်လက်ဆောင်ရွက်ပေးပါမယ်။ Payment ကို နောက်အဆင့်တွင် ထည့်သွင်းပါမယ်။</p>
     <button class="primary" onclick="location.reload()">Back to Store</button>
   </div>
 </section>
@@ -316,6 +196,8 @@ footer{
 </footer>
 
 <script>
+const API_URL = "https://digitalstore-api.mrking-mubarak-mm.workers.dev/api/orders";
+
 const products = [
   {id:1,name:"Roblox Robux",category:"Roblox",icon:"🟥",desc:"Roblox Digital Currency",price:10000},
   {id:2,name:"Roblox Premium",category:"Roblox",icon:"🎮",desc:"Roblox Premium Package",price:20000},
@@ -433,16 +315,55 @@ function goCheckout(){
   document.getElementById("checkout").scrollIntoView({behavior:"smooth"});
 }
 
-document.getElementById("orderForm").addEventListener("submit",function(e){
+/* REAL CUSTOMER ORDER SUBMISSION */
+document.getElementById("orderForm").addEventListener("submit", async function(e){
   e.preventDefault();
   if(!cart.length)return;
 
-  const orderId="DS-"+Date.now().toString().slice(-8);
-  document.getElementById("orderNumber").textContent="Order ID: "+orderId;
-  document.getElementById("checkoutFormBox").classList.add("hidden");
-  document.getElementById("successBox").style.display="block";
-  cart=[];
-  updateCart();
+  const submitButton = this.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  submitButton.textContent = "Submitting Order...";
+
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        customerName: document.getElementById("customerName").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        game: document.getElementById("game").value,
+        gameId: document.getElementById("gameId").value.trim(),
+        note: document.getElementById("note").value.trim(),
+        items: cart.map(item => ({
+          productId: String(item.id),
+          quantity: item.qty
+        }))
+      })
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "Order failed");
+    }
+
+    document.getElementById("orderNumber").textContent =
+      "Order ID: " + result.orderNumber;
+
+    document.getElementById("checkoutFormBox").classList.add("hidden");
+    document.getElementById("successBox").style.display = "block";
+
+    cart = [];
+    updateCart();
+
+  } catch(error) {
+    alert("Order တင်၍မရပါ။ " + error.message);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Place Order";
+  }
 });
 
 renderProducts();
