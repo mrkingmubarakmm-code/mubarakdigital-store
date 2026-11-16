@@ -1,4 +1,6 @@
-// Trigger Cloudflare deployment
+
+import { handleOrders } from "./orders.js";
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -46,6 +48,10 @@ export default {
           error: error.message
         }, 500);
       }
+    }
+
+    if (url.pathname === "/api/orders") {
+      return handleOrders(request, env);
     }
 
     return json({
