@@ -1,0 +1,9 @@
+
+name = "digitalstore-api"
+main = "index.js"
+compatibility_date = "2026-11-16"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "digitalstore-db"
+database_id = "bed64d16-ebc7-4021-85c7-3fd3b63e1dc0"
